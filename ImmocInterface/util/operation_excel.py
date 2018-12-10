@@ -22,16 +22,25 @@ class Operation_excel:
         else:
             self.filename = '../dataconfig/InterfaceCases.xlsx'
             self.sheet_id = 0
+        self.data = self.get_data()
 
     def get_data(self):
         data1 = xlrd.open_workbook(self.filename)
         tables1 = data1.sheet_by_index(self.sheet_id)
         return tables1
 
+    def get_lines(self):
+        tables = self.data
+        return tables.nrows
+
+    def get_cell_value(self, row, col):
+        return self.data.cell_value(row, col)
+
 
 if __name__=='__main__':
     oper = Operation_excel()
-    print(oper.get_data().cell_value(1, 3))
+    print(oper.get_cell_value(1, 4))
+    print(oper.get_lines())
 
 
 

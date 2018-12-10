@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Pycharm.iml" filepath="$PROJECT_DIR$/.idea/Pycharm.iml" />
+      <module fileurl="file://E:/PycharmProject/.idea/PycharmProject.iml" filepath="E:/PycharmProject/.idea/PycharmProject.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/QuickStartGuide/.idea/QuickStartGuide.iml" filepath="$USER_HOME$/PycharmProjects/QuickStartGuide/.idea/QuickStartGuide.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/RobotFramework/.idea/RobotFramework.iml" filepath="$USER_HOME$/PycharmProjects/RobotFramework/.idea/RobotFramework.iml" />
+      <module fileurl="file://E:/Auto/TCRC/.idea/TCRC.iml" filepath="E:/Auto/TCRC/.idea/TCRC.iml" />
     </modules>
   </component>
 </project>
