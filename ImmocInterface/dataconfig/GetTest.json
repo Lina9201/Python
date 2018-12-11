@@ -1,12 +1,7 @@
 {
-	"GetTest1":
+	"LoginSuccess":
 	{
-	"key1":"value1",
-	"key2":"value2"
-	},
-"GetTest2":
-	{
-	"key3":"value3",
-	"key4":"value4"
+	"username":"admin",
+	"password":"21232f297a57a5a743894a0e4a801fc3"
 	}
 }

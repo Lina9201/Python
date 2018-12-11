@@ -9,12 +9,12 @@ class Operation_json:
             data = json.load(fp)
             return data
 
-    def get_data(self,  id):
+    def get_correctdata(self,  id):
         return self.data[id]
 
 
 if __name__ == '__main__':
     opra = Operation_json()
-    print(opra.get_data('GetTest1'))
+    #print(opra.get_correctdata('LoginSuccess'))
 
 

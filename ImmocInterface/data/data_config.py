@@ -1,16 +1,17 @@
 class global_var:
     # case_id
     Id = '0'
-    url = '1'
-    run = '2'
-    request_way = '3'
-    header = '4'
-    case_depend = '5'
-    data_depend = '6'
-    field_depend = '7'
-    data = '8'
-    expect = '9'
-    result = '10'
+    request_name = '1'
+    url = '2'
+    run = '3'
+    request_way = '4'
+    header = '5'
+    case_depend = '6'
+    data_depend = '7'
+    field_depend = '8'
+    dat = '9'
+    expect = '10'
+    result = '11'
 
 #获取case_id
     def get_id():
@@ -37,8 +38,8 @@ class global_var:
     def get_field_depend():
         return global_var.field_depend
 
-    def get_data():
-        return global_var.data
+    def get_dat():
+        return global_var.dat
 
     def get_expect():
         return global_var.expect
@@ -48,9 +49,9 @@ class global_var:
 
     def get_header_value():
         header = {
-            "header": "1234",
-            "cookie": "mushi"
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
         }
+
 
 
 
