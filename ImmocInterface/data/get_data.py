@@ -58,7 +58,7 @@ class GetData:
 
     def get_expect_data(self, row):
         col = int(global_var.get_expect())
-        expect = self.opera_excel.get_cell_value(col, row)
+        expect = eval(self.opera_excel.get_cell_value(row, col))
         if expect == " ":
             return None
         return expect

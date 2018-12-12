@@ -1,20 +1,32 @@
+import requests
 import json
+class RunMethod:
+    def post_main(self, url, data, header=None):
+        res = None
+        if header != None:
+            res = requests.post(url=url, data=data, headers=header)
+        else:
+            res = requests.post(url=url, data=data)
+        return res.json()
 
-class Operation_json:
-    def __init__(self):
-        self.data = self.read_data()
+    def get_main(self, url, data, header=None):
+        res = None
+        if header != None:
+            res = requests.get(url=url, data=data, headers=header)
+        else:
+            res = requests.get(url=url, data=data, headers=header)
+        return res.json()
 
-    def read_data(self):
-        with open("../dataconfig/GetTest.json") as fp:
-            data = json.load(fp)
-            return data
+    def run_main(self, method, url, data=None, header=None):
+        res = None
+        if method == 'post':
+            res = self.post_main(url, data, header)
+        else:
+            res = self.get_main(url, data, header)
+        return json.dumps(res, ensure_ascii=False, sort_keys=True, indent=2)
 
-    def get_correctdata(self,  id):
-        return self.data[id]
 
 
-if __name__ == '__main__':
-    opra = Operation_json()
-    #print(opra.get_correctdata('LoginSuccess'))
+
 
 

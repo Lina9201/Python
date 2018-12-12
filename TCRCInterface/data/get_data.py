@@ -1,6 +1,6 @@
-from ImmocInterface.util.operation_excel import Operation_excel
-from ImmocInterface.util.operation_json import Operation_json
-from ImmocInterface.data.data_config import global_var
+from TCRCInterface.util.operation_excel import Operation_excel
+from TCRCInterface.util.operation_json import Operation_json
+from TCRCInterface.data.data_config import global_var
 
 class GetData:
     def __init__(self):
@@ -56,12 +56,21 @@ class GetData:
         request_data = opera_json.get_correctdata(self.get_requests_data(row))
         return request_data
 
+    # 获取预期结果
     def get_expect_data(self, row):
         col = int(global_var.get_expect())
-        expect = self.opera_excel.get_cell_value(col, row)
+        expect = self.opera_excel.get_cell_value(row, col)
         if expect == " ":
             return None
         return expect
+
+    # 写入用例执行结果
+    def write_result(self, row, value):
+        col = int(global_var.get_result())
+        self.opera_excel.write_value(row, col, value)
+
+
+
 
 
 
