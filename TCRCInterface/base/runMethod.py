@@ -3,6 +3,7 @@ import json
 class RunMethod:
     def post_main(self, url, data, header=None):
         res = None
+        print(url, data, header)
         if header != None:
             res = requests.post(url=url, data=data, headers=header)
         else:

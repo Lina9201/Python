@@ -69,6 +69,44 @@ class GetData:
         col = int(global_var.get_result())
         self.opera_excel.write_value(row, col, value)
 
+    # 获取依赖数据的key
+    def get_depend_key(self, row):
+        col = int(global_var.get_data_depend())
+        depend_key = self.opera_excel.get_cell_value(row, col)
+        if depend_key == "":
+            return None
+        else:
+            return depend_key
+
+    # 判断是否有case依赖
+    def isdepend(self, row):
+        col = (int)(global_var.get_case_depend())
+        depend_case_id = self.opera_excel.get_cell_value(row, col)
+        if depend_case_id == "":
+            return None
+        else:
+            return depend_case_id
+
+    # 获取数据依赖字段
+    def get_depend_data(self, row):
+        col = (int)(global_var.get_field_depend())
+        data = self.opera_excel.get_cell_value(row, col)
+        if data == "":
+            return None
+        else:
+            return data
+
+if __name__=='__main__':
+    opera_excel = Operation_excel()
+    testdata = GetData()
+    col = (int)(global_var.get_case_depend())
+    case_id = opera_excel.get_cell_value(6, col)
+    print(testdata.isdepend())
+
+
+
+
+
 
 
 

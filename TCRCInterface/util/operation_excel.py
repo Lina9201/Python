@@ -62,6 +62,7 @@ class Operation_excel:
     def get_rows_data(self, case_id):
         row_num = self.get_rows_num(case_id)
         row_data = self.get_row_value(row_num)
+        # print(case_id)
         return row_data
 
 
@@ -72,7 +73,7 @@ class Operation_excel:
         return row_data
 
     # 获取某一列的内容
-    def get_cols_data(self, col_id = None):
+    def get_cols_data(self, col_id=None):
         if col_id != None:
             self.data.col_values(col_id)
         else:
@@ -86,6 +87,9 @@ if __name__=='__main__':
     oper = Operation_excel()
     print(oper.get_cell_value(1, 4))
     print(oper.get_lines())
+    cols_data = oper.get_cols_data()
+    print(cols_data)
+    print(oper.get_rows_num("TCRC-001"))
 
 
 

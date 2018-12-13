@@ -1,6 +1,8 @@
 from TCRCInterface.base.runMethod import RunMethod
 from TCRCInterface.data.get_data import GetData
 from TCRCInterface.util.common_util import CommonUtil
+from TCRCInterface.data.dependent_data import dependent_data
+import requests
 import json
 
 class run_test:
@@ -23,21 +25,41 @@ class run_test:
             data = self.data.get_requests_data(i)
             print(data)
             expect = self.data.get_expect_data(i)
-            print(expect)
             header = self.data.get_is_header(i)
             print(header)
-            if is_run:
+            depend_case = self.data.isdepend(i)
+            if depend_case != None:
+                self.depend_data = dependent_data(depend_case)
+                print(depend_case)
+                depend_response_data = self.depend_data.get_for_key(i)
+                print(depend_response_data)
+                depend_key = self.data.get_depend_data(i)
+                print(depend_key)
+                header[depend_key] = depend_response_data
+                print(method, url, data, header)
+            # if is_run:
+                if method == 'post':
+                    res = requests.post(url=url, data=json.dumps(data), headers=header)
+                print(res.json())
+            else:
                 res = self.run_method.run_main(method, url, data, header)
                 print(res)
-                if self.util.is_contain(expect, res):
-                    self.data.write_result(i, 'Pass')
-                    # resp = json.loads(res)
-                    # print(type(res))
-                    # print(resp['data'])
-                    print("测试通过")
-                else:
-                    self.data.write_result(i, 'Fail')
-                    print("测试失败")
+                # if depend_case != None:
+                #     # 获取依赖的响应数据
+                #     depend_response_data = self.depend_data.get_for_key(i)
+                #     # 获取依赖的key
+                #     depend_key = self.data.get_depend_data(i)
+                #     header[depend_key] = depend_response_data
+
+            if self.util.is_contain(expect, res):
+                self.data.write_result(i, 'Pass')
+                # resp = json.loads(res)
+                # print(type(res))
+                # print(resp['data'])
+                print("测试通过")
+            else:
+                self.data.write_result(i, 'Fail')
+                print("测试失败")
 
 
 if __name__=='__main__':
