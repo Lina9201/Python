@@ -5,6 +5,7 @@ from TCRCInterface.data.dependent_data import dependent_data
 import requests
 import json
 
+
 class run_test:
     def __init__(self):
         self.run_method =RunMethod()
@@ -12,6 +13,8 @@ class run_test:
         self.util = CommonUtil()
 
     def go_on_run(self):
+        paas_count = []
+        fail_count = []
         res = None
         rows_count = self.data.get_case_lines()
         print(rows_count)
@@ -53,14 +56,17 @@ class run_test:
 
             if self.util.is_contain(expect, res):
                 self.data.write_result(i, 'Pass')
+                paas_count.append(i)
                 # resp = json.loads(res)
                 # print(type(res))
                 # print(resp['data'])
                 print("测试通过")
             else:
                 self.data.write_result(i, 'Fail')
+                fail_count.append(i)
                 print("测试失败")
-
+            print(len(paas_count))
+            print(len(fail_count))
 
 if __name__=='__main__':
     run = run_test()

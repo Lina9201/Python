@@ -12,5 +12,6 @@
     <orderEntry type="module" module-name="QuickStartGuide" />
     <orderEntry type="module" module-name="RobotFramework" />
     <orderEntry type="module" module-name="TCRC" />
+    <orderEntry type="module" module-name="requests_python_excel" />
   </component>
 </module>

@@ -16,6 +16,8 @@ from xlutils.copy import copy
 # 优化使用类进行封装
 class Operation_excel:
     def __init__(self, filename=None, sheet_id=None):
+
+        # 获取第一行作为key值
         if filename:
             self.filename = filename
             self.sheet_id = sheet_id
@@ -23,6 +25,7 @@ class Operation_excel:
             self.filename = '../dataconfig/InterfaceCases.xlsx'
             self.sheet_id = 0
         self.data = self.get_data()
+        self.keys = self.data.row_values(0)
 
     # 获取某个sheet的表格
     def get_data(self):
@@ -34,6 +37,11 @@ class Operation_excel:
     def get_lines(self):
         tables = self.data
         return tables.nrows
+
+    # 获取表格中的列数
+    def get_cols(self):
+        tables = self.data
+        return tables.ncols
 
     # 获取表格中某个单元格的值
     def get_cell_value(self, row, col):
@@ -80,16 +88,35 @@ class Operation_excel:
             cols = self.data.col_values(0)
         return cols
 
+    # 获取表格的值
+    def dict_data(self):
+        if self.get_lines() <= 1:
+            print("总行数小于1")
+        else:
+            r = []
+            j = 1
+            for i in list(range(self.get_lines()-1)):
+                s = {}
+                # 从第二行取对应values值
+                s['rowNum'] = i+2
+                values = self.data.row_values(j)
+                for x in list(range(self.get_cols())):
+                    s[self.keys[x]] = values[x]
+                r.append(s)
+                j += 1
+            return r
+
 
 
 
 if __name__=='__main__':
     oper = Operation_excel()
-    print(oper.get_cell_value(1, 4))
-    print(oper.get_lines())
-    cols_data = oper.get_cols_data()
-    print(cols_data)
-    print(oper.get_rows_num("TCRC-001"))
+    # print(oper.get_cell_value(1, 4))
+    # print(oper.get_lines())
+    # cols_data = oper.get_cols_data()
+    # print(cols_data)
+    # print(oper.get_rows_num("TCRC-001"))
+    print(oper.dict_data())
 
 
 
