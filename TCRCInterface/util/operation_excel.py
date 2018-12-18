@@ -62,9 +62,8 @@ class Operation_excel:
         for col_data in cols_data:
             if case_id in col_data:
                 return num
+                print(num)
             num = num + 1
-
-
 
     # 根据依赖的case_id去获取对应行的内容
     def get_rows_data(self, case_id):

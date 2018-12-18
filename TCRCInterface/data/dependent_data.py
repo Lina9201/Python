@@ -18,9 +18,10 @@ class dependent_data:
         return rows_data
 
     # 执行依赖测试，获取结果
-    def run_dependent(self):
+
+    def run_dependent(self, case_id):
         run_method = RunMethod()
-        row_num = self.opera_excel.get_rows_num("TCRC-001")
+        row_num = self.opera_excel.get_rows_num(case_id)
         print(row_num)
         request_data = self.data.get_requests_data(row_num)
         header = self.data.get_is_header(row_num)
@@ -39,5 +40,11 @@ class dependent_data:
         madle = jsonpath_expr.find(response_data)
         print(madle)
         return [match.value for match in madle][0]
+
+if __name__=='__main__':
+    d = dependent_data()
+    depend1 = "TCRC-001"
+    d.run_dependent(depend1)
+
 
 

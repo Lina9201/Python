@@ -1,5 +1,5 @@
-from TCRCInterface.util.operation_excel import Operation_excel
 from TCRCInterface.data.dependent_data import dependent_data
+from TCRCInterface.util.operation_excel import Operation_excel
 import requests
 import json
 from jsonpath_rw import jsonpath, parse
@@ -20,11 +20,11 @@ def send_requests(s, testdata):
             res = s.request(method=method, url=url, headers=header, data=data)
             print("请求响应结果: %s" % res.text)
         else:
-            dependdata = dependent_data("TCRC_001")
-            depend_response_data = dependdata.run_dependent()
+            dependdata = dependent_data(depend_case)
+            depend_response_data = dependdata.run_dependent(depend_case)
             jsonpath_expr = parse(depend_data)
             madle = jsonpath_expr.find(depend_response_data)
-            print(madle)
+            # print(madle)
             depend_response_data_new = [match.value for match in madle][0]
             depend_data_new = testdata['依赖数据所属字段']
             header[depend_data_new] = depend_response_data_new
@@ -34,6 +34,7 @@ def send_requests(s, testdata):
             print("预期结果: %s" % expect)
             print("依赖ID: %s" % depend_case)
             print("依赖数据: %s" % depend_data)
+            print("依赖数据的值: %s" % depend_response_data_new)
             print("请求响应结果: %s" % res.text)
             return res
 
