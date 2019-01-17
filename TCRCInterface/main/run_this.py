@@ -1,7 +1,6 @@
 # coding=utf-8
 import unittest
 from TCRCInterface.util import HTMLTestRunner_api
-import os
 
 # 用例路径
 case_path = "E:\\Pycharm\\TCRCInterface\\case"

@@ -13,5 +13,13 @@
     <orderEntry type="module" module-name="RobotFramework" />
     <orderEntry type="module" module-name="TCRC" />
     <orderEntry type="module" module-name="requests_python_excel" />
+    <orderEntry type="module" module-name="tasks_proj" />
+  </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="projectConfiguration" value="pytest" />
+    <option name="PROJECT_TEST_RUNNER" value="pytest" />
   </component>
 </module>
