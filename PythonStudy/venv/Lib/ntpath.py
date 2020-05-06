@@ -1,5 +1,5 @@
 # Module 'ntpath' -- common operations on WinNT/Win95 pathnames
-"""Common pathname manipulations, WindowsNT/95 version.
+"""common pathname manipulations, WindowsNT/95 version.
 
 Instead of importing this module directly, import os and refer to this
 module as os.path.

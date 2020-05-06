@@ -14,6 +14,11 @@
     <orderEntry type="module" module-name="TCRC" />
     <orderEntry type="module" module-name="requests_python_excel" />
     <orderEntry type="module" module-name="tasks_proj" />
+    <orderEntry type="module" module-name="2019Python" />
+    <orderEntry type="module" module-name="tcrc_api_testing" />
+    <orderEntry type="module" module-name="tcrc_api_testing" />
+    <orderEntry type="module" module-name="tcrc_api_testing" />
+    <orderEntry type="module" module-name="tcrc_api_testing" />
   </component>
   <component name="PackageRequirementsSettings">
     <option name="requirementsPath" value="" />

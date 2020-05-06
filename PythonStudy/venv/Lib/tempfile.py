@@ -116,7 +116,7 @@ def _infer_return_type(*args):
 
 
 def _sanitize_params(prefix, suffix, dir):
-    """Common parameter processing for most APIs in this module."""
+    """common parameter processing for most APIs in this module."""
     output_type = _infer_return_type(prefix, suffix, dir)
     if suffix is None:
         suffix = output_type()
@@ -233,7 +233,7 @@ def _get_default_tempdir():
 _name_sequence = None
 
 def _get_candidate_names():
-    """Common setup sequence for all user-callable interfaces."""
+    """common setup sequence for all user-callable interfaces."""
 
     global _name_sequence
     if _name_sequence is None:

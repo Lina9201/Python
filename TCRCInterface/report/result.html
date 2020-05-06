@@ -247,9 +247,9 @@ function close_shots(obj) {
 </div>
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>开始时间:</strong> 2018-12-18 20:27:54</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:00.389775</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>6</p>
+<p class='attribute'><strong>开始时间:</strong> 2019-03-18 18:52:59</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:02.849368</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>4</p>
 
 <p class='description'>用例执行情况</p>
 </div>
@@ -284,11 +284,11 @@ function close_shots(obj) {
 
 <tr class='passClass'>
     <td>Test_api.Test_api</td>
-    <td>6</td>
-    <td>6</td>
+    <td>4</td>
+    <td>4</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',6)">详情</a></td>
+    <td><a href="javascript:showClassDetail('c1',4)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
@@ -308,10 +308,10 @@ function close_shots(obj) {
         </div>
         <pre>
         
-pt1.1: *******正在执行用例：-----  TCRC-001  ----**********
-请求方式：post, 请求url:http://172.20.12.45:8080/operation/active/login
+pt1.1: *******正在执行用例：-----  TCRC_Login  ----**********
+请求方式：post, 请求url:http://172.50.10.42:8000/v1/tokens
 预期结果: SUCCESS
-请求响应结果: {"message":"SUCCESS","code":"0","data":{"token":{"id":"e171e021828043a19a03006ccfd0cf1f","user":{"id":"0a3913d4335049cb8a1586f1d1af238f","name":"超级管理员","create":null,"modified":null,"account":"admin","password":"21232f297a57a5a743894a0e4a801fc3","email":"12306@16.com","phone":"13333333333","status":"1","updateTime":"2017/7/28 12:00","roleId":"001","description":null,"role":{"id":"001","name":"超级管理员","create":null,"modified":null,"type":"0","description":"系统超级管理员","authority":null,"createTime":null,"permissionIds":null}}}}}
+请求响应结果: {"status":200,"data":{"key":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA","expireTime":1552909329000,"user":{"id":"41c1e912-350a-4c7f-81e9-12350a3c7f11","account":"zhuxuefei","password":null,"name":"zhuxuefei1","description":null,"type":null,"source":null,"status":"active","mobilePhone":"18994205919","email":"zhuxuefei@trendytech.com.cn","rank":null,"extra":{"birstday":0,"sex":"male","code":"","isManager":"staff"},"createTime":1550470948440,"updateTime":1552906287230}}}
 
 
         </pre>
@@ -338,10 +338,25 @@ pt1.1: *******正在执行用例：-----  TCRC-001  ----**********
         </div>
         <pre>
         
-pt1.2: *******正在执行用例：-----  TCRC-002  ----**********
-请求方式：post, 请求url:http://172.20.12.45:8080/operation/active/login
-预期结果: 用户不存在
-请求响应结果: {"message":"用户不存在","code":"1010"}
+pt1.2: 1
+http://172.50.10.42:8000/v1/tokens {'authType': 'password', 'params': {'username': 'zhuxuefei', 'password': '123456'}} {'content-type': 'application/json;charset=UTF-8'}
+{'data': {'expireTime': 1552909329000, 'key': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA', 'user': {'account': 'zhuxuefei', 'createTime': 1550470948440, 'description': None, 'email': 'zhuxuefei@trendytech.com.cn', 'extra': {'birstday': 0, 'code': '', 'isManager': 'staff', 'sex': 'male'}, 'id': '41c1e912-350a-4c7f-81e9-12350a3c7f11', 'mobilePhone': '18994205919', 'name': 'zhuxuefei1', 'password': None, 'rank': None, 'source': None, 'status': 'active', 'type': None, 'updateTime': 1552906287551}}, 'status': 200}
+*******正在执行用例：-----  TCRC_Login1  ----**********
+请求方式：post, 请求url:http://172.50.10.42:8000/v1/tokens
+预期结果: SUCCESS
+依赖ID: TCRC_Login
+依赖数据: data.key
+依赖数据的值: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA
+&lt;class 'dict'&gt;
+{'content-type': 'application/json;charset=UTF-8', 'X-AUTH-TOKEN': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA'}
+===============================
+{"authType": "password", "params": {"username": "zhuxuefei", "password": "123456"}}
+===============================
+post
+===============================
+http://172.50.10.42:8000/v1/tokens
+===============================
+请求响应结果: {"status":200,"data":{"key":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA","expireTime":1552909329000,"user":{"id":"41c1e912-350a-4c7f-81e9-12350a3c7f11","account":"zhuxuefei","password":null,"name":"zhuxuefei1","description":null,"type":null,"source":null,"status":"active","mobilePhone":"18994205919","email":"zhuxuefei@trendytech.com.cn","rank":null,"extra":{"birstday":0,"sex":"male","code":"","isManager":"staff"},"createTime":1550470948440,"updateTime":1552906287974}}}
 
 
         </pre>
@@ -368,10 +383,25 @@ pt1.2: *******正在执行用例：-----  TCRC-002  ----**********
         </div>
         <pre>
         
-pt1.3: *******正在执行用例：-----  TCRC-003  ----**********
-请求方式：post, 请求url:http://172.20.12.45:8080/operation/active/login
-预期结果: 用户名或密码错误
-请求响应结果: {"message":"用户名或密码错误","code":"1007"}
+pt1.3: 1
+http://172.50.10.42:8000/v1/tokens {'authType': 'password', 'params': {'username': 'zhuxuefei', 'password': '123456'}} {'content-type': 'application/json;charset=UTF-8'}
+{'data': {'expireTime': 1552909329000, 'key': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA', 'user': {'account': 'zhuxuefei', 'createTime': 1550470948440, 'description': None, 'email': 'zhuxuefei@trendytech.com.cn', 'extra': {'birstday': 0, 'code': '', 'isManager': 'staff', 'sex': 'male'}, 'id': '41c1e912-350a-4c7f-81e9-12350a3c7f11', 'mobilePhone': '18994205919', 'name': 'zhuxuefei1', 'password': None, 'rank': None, 'source': None, 'status': 'active', 'type': None, 'updateTime': 1552906288279}}, 'status': 200}
+*******正在执行用例：-----  TCRC_CMDB_001  ----**********
+请求方式：post, 请求url:http://172.50.10.42:8000/admin/v1/categories
+预期结果: SUCCESS
+依赖ID: TCRC_Login
+依赖数据: data.key
+依赖数据的值: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA
+&lt;class 'dict'&gt;
+{'content-type': 'application/json;charset=UTF-8', 'T-AUTH-TOKEN': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA'}
+===============================
+{"category": {"name": "\u63a5\u53e3\u6d4b\u8bd5-\u8bbe\u5907\u7c7b\u578b1", "code": "220000", "parentCategoryKey": "", "icon": "iconfont icon-arrfill_d-copy"}}
+===============================
+post
+===============================
+http://172.50.10.42:8000/admin/v1/categories
+===============================
+请求响应结果: {"status":200,"data":{"category":{"_key":"0bb2c48ac59144cd8d15242c343d7a38","name":"接口测试-设备类型1","createTime":"2019-03-18 18:51:28","modifyTime":"2019-03-18 18:51:28","code":"220000","parentCategoryKey":"","icon":"iconfont icon-arrfill_d-copy"},"propGroups":[]}}
 
 
         </pre>
@@ -398,75 +428,25 @@ pt1.3: *******正在执行用例：-----  TCRC-003  ----**********
         </div>
         <pre>
         
-pt1.4: *******正在执行用例：-----  TCRC-004  ----**********
-请求方式：post, 请求url:http://172.20.12.45:8080/operation/active/login
-预期结果: 用户不存在
-请求响应结果: {"message":"用户不存在","code":"1010"}
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.5' class='hiddenRow'>
-    <td ><div class='testcase'>test_api_5: dict() -> new empty dictionary</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
-        通过</a></span>
-
-    <div id='div_pt1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.5: *******正在执行用例：-----  TCRC-005  ----**********
-请求方式：post, 请求url:http://172.20.12.45:8080/operation/active/login
-预期结果: 用户不存在
-请求响应结果: {"message":"用户不存在","code":"1010"}
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td></td>
-</tr>
-
-<tr id='pt1.6' class='hiddenRow'>
-    <td ><div class='testcase'>test_api_6: dict() -> new empty dictionary</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
-        通过</a></span>
-
-    <div id='div_pt1.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.6: 1
-http://172.20.12.45:8080/operation/active/login {'username': 'admin', 'password': '21232f297a57a5a743894a0e4a801fc3'} {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
-*******正在执行用例：-----  BS-001  ----**********
-请求方式：post, 请求url:http://172.20.12.45:8080/operation/users
+pt1.4: 1
+http://172.50.10.42:8000/v1/tokens {'authType': 'password', 'params': {'username': 'zhuxuefei', 'password': '123456'}} {'content-type': 'application/json;charset=UTF-8'}
+{'data': {'expireTime': 1552909329000, 'key': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA', 'user': {'account': 'zhuxuefei', 'createTime': 1550470948440, 'description': None, 'email': 'zhuxuefei@trendytech.com.cn', 'extra': {'birstday': 0, 'code': '', 'isManager': 'staff', 'sex': 'male'}, 'id': '41c1e912-350a-4c7f-81e9-12350a3c7f11', 'mobilePhone': '18994205919', 'name': 'zhuxuefei1', 'password': None, 'rank': None, 'source': None, 'status': 'active', 'type': None, 'updateTime': 1552906288752}}, 'status': 200}
+*******正在执行用例：-----  TCRC_Ora_001  ----**********
+请求方式：post, 请求url:http://172.50.10.42:8000/admin/v1/organizations
 预期结果: SUCCESS
-依赖ID: TCRC-001
-依赖数据: data.token.id
-依赖数据的值: 50570840abb14c8eb35c91f54eae0cc7
-请求响应结果: {"message":"用户名已存在，添加失败","code":"1402"}
+依赖ID: TCRC_Login
+依赖数据: data.key
+依赖数据的值: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA
+&lt;class 'dict'&gt;
+{'content-type': 'application/json;charset=UTF-8', 'T-AUTH-TOKEN': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJjMjUzNGQ2YS0xZTY5LTRlNDQtOTM0ZC02YTFlNjk2ZTQ0OTkiLCJzdWIiOiJ6aHV4dWVmZWkiLCJpYXQiOjE1NTI5MDIxMjksImlzcyI6IkFwYWNoZVN5bmNvcGUiLCJleHAiOjE1NTI5MDkzMjksIm5iZiI6MTU1MjkwMjEyOX0.So74R1uQtW81m0WVfL4HwT6WY0I2ohbHdNFHI1bL_FsrP2WiyXXtfkpQo41EQio3vmFlyJOE7SiBA1VjelzCZA'}
+===============================
+{"alias": " ", "name": "test1", "parentId": "2387ee16-50b7-4353-87ee-1650b733533b"}
+===============================
+post
+===============================
+http://172.50.10.42:8000/admin/v1/organizations
+===============================
+请求响应结果: {"status":200,"data":{"id":"6fa97c7f-c6ac-4b53-a97c-7fc6ac2b5316","name":null,"alias":"test1","parentId":"2387ee16-50b7-4353-87ee-1650b733533b","source":null}}
 
 
         </pre>
@@ -479,8 +459,8 @@ http://172.20.12.45:8080/operation/active/login {'username': 'admin', 'password'
 
 <tr id='total_row'>
     <td>统计</td>
-    <td>6</td>
-    <td>6</td>
+    <td>4</td>
+    <td>4</td>
     <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>
@@ -488,7 +468,7 @@ http://172.20.12.45:8080/operation/active/login {'username': 'admin', 'password'
 </tr>
 </table>
 <script>
-    drawCircle(6, 0, 0)
+    drawCircle(4, 0, 0)
 </script>
 
 <div id='ending'>&nbsp;</div>

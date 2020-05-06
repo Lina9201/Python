@@ -15,3 +15,4 @@ if __name__ == "__main__":
     # 将t中元素合并成一个新的字符串
     str_demo = ''.join(t)
     print(str_demo)
+

@@ -5,17 +5,17 @@ class RunMethod:
         res = None
         print(url, data, header)
         if header != None:
-            res = requests.post(url=url, data=data, headers=header)
+            res = requests.post(url=url, data=json.dumps(data), headers=header)
         else:
-            res = requests.post(url=url, data=data)
+            res = requests.post(url=url, data=json.dumps(data))
         return res.json()
 
     def get_main(self, url, data, header=None):
         res = None
         if header != None:
-            res = requests.get(url=url, data=data, headers=header)
+            res = requests.get(url=url, data=json.dumps(data), headers=header)
         else:
-            res = requests.get(url=url, data=data, headers=header)
+            res = requests.get(url=url, data=json.dumps(data), headers=header)
         return res.json()
 
     def run_main(self, method, url, data=None, header=None):

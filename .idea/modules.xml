@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://E:/PycharmProject/.idea/2019Python.iml" filepath="E:/PycharmProject/.idea/2019Python.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Pycharm.iml" filepath="$PROJECT_DIR$/.idea/Pycharm.iml" />
       <module fileurl="file://E:/PycharmProject/.idea/PycharmProject.iml" filepath="E:/PycharmProject/.idea/PycharmProject.iml" />
       <module fileurl="file://$USER_HOME$/PycharmProjects/QuickStartGuide/.idea/QuickStartGuide.iml" filepath="$USER_HOME$/PycharmProjects/QuickStartGuide/.idea/QuickStartGuide.iml" />
@@ -9,6 +10,7 @@
       <module fileurl="file://E:/Auto/TCRC/.idea/TCRC.iml" filepath="E:/Auto/TCRC/.idea/TCRC.iml" />
       <module fileurl="file://E:/Git/requests_python_excel/.idea/requests_python_excel.iml" filepath="E:/Git/requests_python_excel/.idea/requests_python_excel.iml" />
       <module fileurl="file://D:/BaiduNetdiskDownload/软件测试基础理论/自动化/pytest/tasks_proj/.idea/tasks_proj.iml" filepath="D:/BaiduNetdiskDownload/软件测试基础理论/自动化/pytest/tasks_proj/.idea/tasks_proj.iml" />
+      <module fileurl="file://E:/AutomationTestTask/.idea/tcrc_api_testing.iml" filepath="E:/AutomationTestTask/.idea/tcrc_api_testing.iml" />
     </modules>
   </component>
 </project>

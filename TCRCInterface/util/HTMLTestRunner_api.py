@@ -191,7 +191,7 @@ class Template_mixin(object):
         2: u'错误',
     }
 
-    DEFAULT_TITLE = 'Unit Test Report'
+    DEFAULT_TITLE = 'Unit Test report'
     DEFAULT_DESCRIPTION = ''
 
     # ------------------------------------------------------------------------
@@ -478,7 +478,7 @@ a.popup_link:hover {
 """  # variables: (name, value)
 
     # ------------------------------------------------------------------------
-    # Report
+    # report
     #
 
     REPORT_TMPL = """

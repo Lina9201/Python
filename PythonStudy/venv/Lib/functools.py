@@ -581,7 +581,7 @@ def _lru_cache_wrapper(user_function, maxsize, typed, _CacheInfo):
             return result
 
     def cache_info():
-        """Report cache statistics"""
+        """report cache statistics"""
         with lock:
             return _CacheInfo(hits, misses, maxsize, cache_len())
 
